@@ -1,16 +1,44 @@
 \documentclass[a4paper,english, 11pt]{article}
 
 \usepackage[a4paper,inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,pdftex]{geometry} 
-\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
 \hypersetup{colorlinks=true,linkcolor=blue, linktocpage}
 
 \newcommand{\emailme}{\href{mailto:lukem@unis.no}{lukem@unis.no}}
 
+% header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhfoffset[L]{1cm} % left extra length
+\fancyhfoffset[R]{1cm} % right extra length
+\rhead{\today}
+\lhead{\bfseries UNIS data management plan}
+% footer
+\rfoot{page \thepage\ of \pageref*{LastPage}}
+
+% title
 \title{UNIS data management plan}
 \date{\today\\v0.1}
 \author{Luke Marsden (\emailme)}
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=9cm]{unis_logo.png}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
 
 \begin{document}
+
 \maketitle
 \tableofcontents
 
