@@ -11,6 +11,7 @@
 \usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{booktabs} % For better table formatting
 \pagestyle{fancy}
 \hypersetup{colorlinks=true,linkcolor=blue, linktocpage}
 
@@ -28,8 +29,8 @@
 
 % title
 \title{UNIS data management plan}
-\date{\today\\v0.1}
-\author{Luke Marsden (\emailme)}
+\date{\today\\v1.0}
+%\author{Luke Marsden (\emailme)}
 \pretitle{%
   \begin{center}
   \LARGE
@@ -40,14 +41,28 @@
 \begin{document}
 
 \maketitle
+\begin{table}[b]
+\centering
+\caption{Revision history}
+\begin{tabular}{cccc}
+\toprule
+Version & Date       & Comment                                      & Responsible \\
+\midrule
+1       & 2023-08-18 & Approved by the LG & Luke Marsden     \\
+0.1     & 2023-06-05 & Ready to be approved by UNIS LG & Luke Marsden     \\
+\bottomrule
+\end{tabular}
+\end{table}
+\newpage
 \tableofcontents
-
 \newpage
 
 \section{Admin details}
 \label{s:admin}
 
 Data management plan of the University Centre in Svalbard (UNIS). UNIS is funded primarily by Kunnskapsdepartementet (KD), with other income sources including overhead income, SIOS management services and rental income from the Kjell Henriksen Observatory, UNIS guest house and Svalbard Forskningspark.
+
+This document was approved by the UNIS leadership group (LG) on 18. August 2023 and will be reviewed annually by the LG and data managers at UNIS. 
 
 \section{Data summary}
 \label{s:data}
@@ -69,7 +84,7 @@ Concerning which file formats to use when publishing data, UNIS follows the deta
 In brief, self explaining file formats (e.g. NetCDF, Darwin Core Archive) will be used. NetCDF itself is not self describing, so the Climate and Forecast Convention will be used as a semantic and structural standard. Adding the \href{https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3}{NetCDF Attribute Convention for Dataset Discovery} as global attributes embeds full discovery
 metadata (e.g. originator/PI, constraints etc.) in the file. SIOS and therefore UNIS recommends using the requirements list at the \href{https://adc.met.no/node/4}{Arctic Data Centre} as a minimum. Additional global attributes can be added as desired.
 
-When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manual (in PDF format).
+When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be published in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manual (in PDF format).
 
 Please refer to the \href{https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SDMS_Interoperability_Guidelines.pdf}{SDMS Interoperability Guidelines} for more details and explanations.
 
